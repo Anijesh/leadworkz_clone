@@ -8,51 +8,31 @@
   --color-off-white: #f8f9fa;
   
   --font-sans: var(--font-inter);
+  --font-heading: var(--font-outfit);
 }
 
 :root {
-  --background: #f8f9fa;
+  --background: #ffffff;
   --foreground: #000000;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #000000;
-    --foreground: #ffffff;
-  }
-}
-
 body {
-  background-color: var(--color-black-true);
+  background-color: var(--background);
   color: var(--foreground);
   font-family: var(--font-sans), sans-serif;
   overflow-x: hidden;
   scroll-behavior: smooth;
 }
 
-.glow-radial-blue {
-  background: radial-gradient(circle, rgba(6,0,171,0.2) 0%, rgba(0,0,0,0) 60%);
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading), sans-serif;
+}
+
+.text-outline {
+  -webkit-text-stroke: 1.5px #2563eb;
+  color: transparent;
 }
 
 .glow-radial-cyan {
   background: radial-gradient(circle, rgba(37,99,235,0.15) 0%, rgba(0,0,0,0) 60%);
-}
-
-.glass-nav {
-  background: rgba(10, 10, 10, 0.5);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-.text-outline {
-  -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.9);
-  color: transparent;
-}
-
-/* Base custom utility for the subtle noise grid */
-.bg-grid-pattern {
-  background-size: 40px 40px;
-  background-image: linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
 }
