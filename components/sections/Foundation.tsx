@@ -48,6 +48,20 @@ export default function Foundation() {
           </Suspense>
         </motion.div>
 
+        {/* Foreground Content - Restored from original analysis */}
+        <div className="relative mt-[-20px] md:mt-[-80px] text-center px-4 max-w-4xl z-30">
+          <h3 className="text-3xl md:text-5xl lg:text-6xl font-bold text-[#1e1b4b] mb-6 tracking-tight drop-shadow-sm leading-tight mix-blend-multiply">
+            The Foundation of <br/> Digital Growth
+          </h3>
+          <div className="flex flex-wrap justify-center items-center gap-3 md:gap-6 text-[#4338ca] text-xs md:text-sm font-bold uppercase tracking-[0.2em]">
+            <span>Signal Discovery</span>
+            <span className="text-[#3B82F6]">•</span>
+            <span>Strategy Architecture</span>
+            <span className="text-[#3B82F6]">•</span>
+            <span>Execution at Speed</span>
+          </div>
+        </div>
+
       </div>
     </section>
   );

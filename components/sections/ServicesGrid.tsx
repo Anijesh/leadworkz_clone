@@ -49,29 +49,7 @@ export default function ServicesGrid() {
       <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-gradient-to-tr from-[#A855F7]/5 to-transparent rounded-full blur-3xl"></div>
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
-        {/* Section Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16 md:mb-20"
-        >
-          <span className="text-[#2563EB] font-bold text-xs uppercase tracking-[0.2em] mb-4 block">
-            What We Do
-          </span>
-          <h2 className="text-4xl md:text-6xl lg:text-7xl font-black tracking-tighter leading-[0.95] mb-6">
-            Full-Spectrum{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#A855F7] to-[#2563EB]">
-              Digital Services
-            </span>
-          </h2>
-          <p className="text-gray-600 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed font-medium">
-            Every service engineered to generate qualified leads and scale your business.
-          </p>
-        </motion.div>
-
-        {/* Services Grid */}
+        {/* Technical Services Footer Acronym Grid */}
         <motion.div
           variants={containerVariants}
           initial="hidden"

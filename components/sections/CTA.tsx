@@ -20,23 +20,24 @@ export default function CTA() {
           transition={{ duration: 0.8 }}
           className="w-full md:w-[45%] flex flex-col items-center md:items-start relative z-30 mb-16 md:mb-0"
         >
-          {/* Service Tabs */}
-          <div className="flex flex-wrap gap-2 mb-8">
-            {serviceTabs.map((tab) => (
-              <motion.button
-                key={tab}
-                onClick={() => setActiveTab(tab)}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className={`px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider transition-all duration-300 ${
-                  activeTab === tab
-                    ? "bg-[#2563EB] text-white shadow-lg"
-                    : "bg-gray-100 text-gray-600 hover:bg-gray-200"
-                }`}
-              >
-                {tab}
-              </motion.button>
-            ))}
+          {/* 3D Stack Graphic exactly referencing Screenshot 1 - MUST Revolve 360 Degrees */}
+          <div className="flex items-center gap-4 mb-10 ml-6 relative">
+            <motion.div 
+              animate={{ rotateZ: 360 }}
+              transition={{ repeat: Infinity, duration: 15, ease: "linear" }}
+              className="w-20 h-20 relative flex flex-col items-center justify-center transform-gpu"
+              style={{ transformStyle: 'preserve-3d', perspective: '1000px' }}
+            >
+              {/* CSS Isometric Stack Layers */}
+              <div className="absolute w-16 h-16 bg-gradient-to-tr from-[#3b82f6] to-[#8b5cf6] rounded-[16px] shadow-[0_10px_30px_rgba(37,99,235,0.5)] border-t-[3px] border-white/40" style={{ transform: 'rotateX(60deg) rotateZ(-45deg) translateZ(30px)' }}>
+                <div className="w-6 h-6 rounded bg-white/20 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 backdrop-blur-md"></div>
+              </div>
+              <div className="absolute w-16 h-16 bg-white/80 rounded-[16px] shadow-[0_10px_20px_rgba(0,0,0,0.1)] border-[2px] border-[#2563eb]" style={{ transform: 'rotateX(60deg) rotateZ(-45deg) translateZ(0px)' }}></div>
+              <div className="absolute w-16 h-16 bg-white/90 rounded-[16px] shadow-[0_20px_40px_rgba(0,0,0,0.1)] border-[2px] border-[#2563eb]/40" style={{ transform: 'rotateX(60deg) rotateZ(-45deg) translateZ(-30px)' }}></div>
+            </motion.div>
+            
+            {/* Small SEO tag next to the spinning icon */}
+            <span className="text-[#A855F7] font-bold text-xs uppercase tracking-widest h-min self-start mt-2">SEO</span>
           </div>
 
           {/* Heading */}
