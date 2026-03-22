@@ -105,11 +105,14 @@ export default function Services() {
                     WebkitBackfaceVisibility: "hidden"
                   }}
                 >
-                  {/* Top Image Section */}
-                  <div
-                    className="h-[55%] w-full bg-cover bg-center"
-                    style={{ backgroundImage: service.img, backgroundColor: '#0a0a0a' }}
-                  >
+                  {/* Top Image Section - Reolving exactly 360 degrees infinitely */}
+                  <div className="h-[55%] w-full relative overflow-hidden bg-[#0a0a0a]">
+                    <motion.div
+                      animate={{ rotate: 360 }}
+                      transition={{ repeat: Infinity, duration: 20, ease: "linear" }}
+                      className="absolute -inset-[50%] bg-cover bg-center scale-[1.5]"
+                      style={{ backgroundImage: service.img }}
+                    />
                     <div className="absolute inset-0 bg-gradient-to-t from-[#2563EB]/40 to-transparent"></div>
                     <div className="absolute top-6 left-6 text-white text-xs font-black bg-black/50 backdrop-blur-md px-4 py-1.5 rounded-full shadow-lg">
                       {service.num}

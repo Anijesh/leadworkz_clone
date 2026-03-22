@@ -2,58 +2,50 @@
 
 import { motion } from "framer-motion";
 import dynamic from "next/dynamic";
-import { Suspense } from "react";
+import { Suspense, useRef } from "react";
 
 const GlobeCanvas = dynamic(() => import("@/components/three/GlobeCanvas"), { ssr: false });
 
 export default function Foundation() {
+  const containerRef = useRef<HTMLElement>(null);
+  
   return (
-    <section className="relative w-full bg-[#050505] py-32 px-6 overflow-hidden border-t border-white/5">
-      <div className="glow-radial-cyan absolute top-1/2 left-[20%] -translate-y-1/2 w-[600px] h-[600px] blur-[150px] rounded-full z-0 opacity-20 pointer-events-none"></div>
+    <section ref={containerRef} className="relative min-h-screen w-full flex flex-col items-center justify-center overflow-hidden bg-[#030303] py-20">
+      
+      {/* Parallax/Fixed Cityscape Background */}
+      <div 
+        className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat bg-fixed opacity-[0.35] pointer-events-none" 
+        style={{ backgroundImage: "url('/hero-bg.jpg')" }}
+      ></div>
 
-      <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-16 items-center z-10 relative">
+      <div className="relative z-10 w-full flex flex-col items-center justify-center h-full pt-10 pb-20">
+        
+        {/* Massive Background Heading */}
+        <h2 className="absolute top-[8%] left-1/2 -translate-x-1/2 w-full text-center text-[18vw] md:text-[20vw] font-black uppercase tracking-tighter leading-none bg-gradient-to-b from-[#3B82F6]/60 to-[#8B5CF6]/10 bg-clip-text text-transparent select-none mix-blend-screen px-4 pointer-events-none z-0">
+          Global Reach
+        </h2>
 
-        {/* Left Side: 3D Globe */}
-        <div className="w-full h-[400px] md:h-[600px] relative rounded-[40px] overflow-hidden glass-nav flex items-center justify-center border border-white/10 shadow-2xl">
-          <Suspense fallback={<div className="text-white/30 text-sm font-bold tracking-widest uppercase animate-pulse">Loading Environment...</div>}>
+        {/* Three.js 3D Globe Canvas Container */}
+        <div className="relative w-full h-[450px] md:h-[650px] flex items-center justify-center z-20 pointer-events-auto">
+          <Suspense fallback={<div className="font-bold text-[#6366F1] animate-pulse">Loading 3D...</div>}>
             <GlobeCanvas />
           </Suspense>
         </div>
 
-        {/* Right Side: Content */}
-        <motion.div
-          initial={{ opacity: 0, x: 50 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.8 }}
-          className="flex flex-col justify-center"
-        >
-          <div className="mb-6">
-            <span className="text-blue-vibrant font-black tracking-[0.2em] uppercase text-xs">01. The Foundation</span>
-            <h2 className="text-5xl md:text-6xl lg:text-[5rem] font-black mt-4 tracking-tighter leading-[1] mb-6">
-              Global Reach.<br /> <span className="text-outline">Local Impact.</span>
-            </h2>
+        {/* Foreground Content */}
+        <div className="relative mt-[-40px] md:mt-[-100px] text-center px-4 max-w-4xl z-30">
+          <h3 className="text-4xl md:text-5xl lg:text-7xl font-bold text-white mb-8 tracking-tight drop-shadow-2xl leading-tight">
+            The Foundation of <br/> Digital Growth
+          </h3>
+          <div className="flex flex-wrap justify-center items-center gap-3 md:gap-6 text-white/50 text-xs md:text-sm font-bold uppercase tracking-[0.2em]">
+            <span>Signal Discovery</span>
+            <span className="text-[#3B82F6]">•</span>
+            <span>Strategy Architecture</span>
+            <span className="text-[#3B82F6]">•</span>
+            <span>Execution at Speed</span>
           </div>
-
-          <p className="text-white/60 text-lg leading-relaxed mb-10 max-w-xl font-medium">
-            We build digital systems that transcend borders while dominating localized search intent. By scaling predictable acquisition channels, your growth is never capped by geography.
-          </p>
-
-          <ul className="space-y-6">
-            {[
-              "Hyper-targeted Search Engine Marketing",
-              "Data-driven Social Advertising",
-              "Conversion Rate Optimization"
-            ].map((item, idx) => (
-              <li key={idx} className="flex items-center gap-5 text-white/90 font-medium text-[17px]">
-                <div className="w-10 h-10 rounded-full bg-blue-vibrant/20 flex items-center justify-center text-blue-vibrant border border-blue-vibrant/40 shadow-[0_0_15px_rgba(37,99,235,0.2)]">
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M5 13l4 4L19 7"></path></svg>
-                </div>
-                {item}
-              </li>
-            ))}
-          </ul>
-        </motion.div>
+        </div>
+        
       </div>
     </section>
   );
