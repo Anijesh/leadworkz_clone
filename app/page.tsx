@@ -1,6 +1,6 @@
 import Hero from "@/components/sections/Hero";
 import CTA from "@/components/sections/CTA";
-import ToolsMarquee from "@/components/sections/ToolsMarquee";
+import About from "@/components/sections/About";
 import UseCases from "@/components/sections/UseCases";
 import Process from "@/components/sections/Process";
 import FAQ from "@/components/sections/FAQ";
@@ -10,29 +10,29 @@ import Foundation from "@/components/sections/Foundation";
 export default function Home() {
   return (
     <div className="flex flex-col w-full relative bg-white">
-      {/* Hero Section */}
+      {/* 1. Hero Section - Modern + Animated with Services Marquee */}
       <Hero />
 
-      {/* "Sit Back Relax" CTA Section */}
+      {/* 2. CTA Section - "Sit Back Relax" with Service Tabs */}
       <CTA />
 
-      {/* Tools & Brand Marquee */}
-      <ToolsMarquee />
+      {/* 3. About/Value Proposition - Stats + Tools Marquee */}
+      <About />
 
-      {/* Growth Use Cases */}
+      {/* 4. Growth Use Cases Section */}
       <UseCases />
 
-      {/* 3D Globe - Global Reach */}
-      <Foundation />
-
-      {/* Process/Methodology */}
+      {/* 5. Process Section - 5-Step Framework */}
       <Process />
 
-      {/* FAQ Section */}
+      {/* 6. FAQ Section - Accordion Style */}
       <FAQ />
 
-      {/* Full Services Grid */}
+      {/* 7. Services Section - Grid Layout (15 Services) */}
       <ServicesGrid />
+
+      {/* 8. 3D Visual Element - Three.js Globe */}
+      <Foundation />
     </div>
   );
 }

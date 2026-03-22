@@ -3,96 +3,21 @@
 import { motion } from "framer-motion";
 
 const services = [
-  {
-    abbr: "Website",
-    title: "Website Design & Development",
-    desc: "Building high-performance digital platforms that convert.",
-    color: "#2563EB",
-  },
-  {
-    abbr: "UI/UX",
-    title: "UI & UX Design",
-    desc: "Crafting intuitive interfaces that elevate user experience.",
-    color: "#A855F7",
-  },
-  {
-    abbr: "SEO",
-    title: "Search Engine Optimization",
-    desc: "Building long-term visibility across organic search.",
-    color: "#6366F1",
-  },
-  {
-    abbr: "SXO",
-    title: "Search Experience Optimization",
-    desc: "Enhancing user experience after the click.",
-    color: "#EC4899",
-  },
-  {
-    abbr: "VSO",
-    title: "Video Search Optimization",
-    desc: "Improving video visibility across search platforms.",
-    color: "#10B981",
-  },
-  {
-    abbr: "LSO",
-    title: "Local Search Optimization",
-    desc: "Winning visibility for location-based intent.",
-    color: "#F59E0B",
-  },
-  {
-    abbr: "CRO",
-    title: "Conversion Rate Optimization",
-    desc: "Turning visitors into measurable outcomes.",
-    color: "#8B5CF6",
-  },
-  {
-    abbr: "DAO",
-    title: "Data-Driven Optimization",
-    desc: "Optimizing decisions using real performance data.",
-    color: "#EF4444",
-  },
-  {
-    abbr: "VEO",
-    title: "Video Experience Optimization",
-    desc: "Improving engagement throughout the video journey.",
-    color: "#06B6D4",
-  },
-  {
-    abbr: "ASO",
-    title: "App Store Optimization",
-    desc: "Increasing app visibility and installs organically.",
-    color: "#84CC16",
-  },
-  {
-    abbr: "SMO",
-    title: "Social Media Optimization",
-    desc: "Amplifying reach and engagement across social platforms.",
-    color: "#F472B6",
-  },
-  {
-    abbr: "FEO",
-    title: "Funnel Experience Optimization",
-    desc: "Optimizing every stage of the conversion funnel.",
-    color: "#FB923C",
-  },
-  {
-    abbr: "LPO",
-    title: "Landing Page Optimization",
-    desc: "Designing pages built to convert intent.",
-    color: "#4ADE80",
-  },
-  {
-    abbr: "UXO",
-    title: "User Experience Optimization",
-    desc: "Removing friction across digital interactions.",
-    color: "#C084FC",
-  },
-  {
-    abbr: "LLMO",
-    title: "Large Language Model Optimization",
-    desc: "Positioning content for AI and LLM-driven discovery.",
-    color: "#22D3EE",
-  },
+  { abbr: "Website", title: "Website Design & Development", desc: "Building high-performance digital platforms that convert.", color: "#2563EB" },
+  { abbr: "UI/UX", title: "UI & UX Design", desc: "Crafting intuitive interfaces that elevate experience.", color: "#A855F7" },
+  { abbr: "SEO", title: "Search Engine Optimization", desc: "Building long-term visibility across organic search.", color: "#6366F1" },
+  { abbr: "SXO", title: "Search Experience Optimization", desc: "Enhancing user experience after the click.", color: "#EC4899" },
+  { abbr: "VSO", title: "Video Search Optimization", desc: "Improving video visibility across platforms.", color: "#10B981" },
+  { abbr: "LSO", title: "Local Search Optimization", desc: "Winning visibility for location-based intent.", color: "#F59E0B" },
+  { abbr: "CRO", title: "Conversion Rate Optimization", desc: "Turning visitors into measurable outcomes.", color: "#8B5CF6" },
+  { abbr: "DAO", title: "Data-Driven Optimization", desc: "Optimizing decisions using performance data.", color: "#EF4444" },
+  { abbr: "VEO", title: "Video Experience Optimization", desc: "Improving engagement throughout video journey.", color: "#06B6D4" },
+  { abbr: "ASO", title: "App Store Optimization", desc: "Increasing app visibility and installs.", color: "#84CC16" },
+  { abbr: "SMO", title: "Social Media Optimization", desc: "Amplifying reach across social platforms.", color: "#F472B6" },
+  { abbr: "FEO", title: "Funnel Experience Optimization", desc: "Optimizing every stage of the funnel.", color: "#FB923C" },
+  { abbr: "LPO", title: "Landing Page Optimization", desc: "Designing pages built to convert intent.", color: "#4ADE80" },
+  { abbr: "UXO", title: "User Experience Optimization", desc: "Removing friction across interactions.", color: "#C084FC" },
+  { abbr: "LLMO", title: "LLM Optimization", desc: "Positioning content for AI discovery.", color: "#22D3EE" },
 ];
 
 const containerVariants = {
@@ -159,7 +84,7 @@ export default function ServicesGrid() {
               key={idx}
               variants={cardVariants}
               whileHover={{ y: -8, scale: 1.02 }}
-              className="group relative bg-white rounded-2xl p-5 shadow-[0_8px_30px_rgba(0,0,0,0.06)] border border-gray-100 hover:border-transparent hover:shadow-[0_15px_50px_rgba(37,99,235,0.12)] transition-all duration-500 cursor-pointer overflow-hidden"
+              className="group relative bg-white rounded-2xl p-5 shadow-[0_8px_30px_rgba(0,0,0,0.06)] border border-gray-100 hover:border-transparent hover:shadow-[0_15px_40px_rgba(37,99,235,0.12)] transition-all duration-300 cursor-pointer overflow-hidden"
             >
               {/* Hover gradient background */}
               <div
@@ -172,7 +97,7 @@ export default function ServicesGrid() {
               <div className="relative z-10">
                 {/* Abbreviation Badge */}
                 <div
-                  className="inline-flex items-center justify-center px-3 py-1.5 rounded-lg font-black text-xs mb-4 transition-all duration-300 group-hover:scale-105"
+                  className="inline-flex items-center justify-center px-4 py-2 rounded-xl font-black text-sm mb-4 transition-all duration-300 group-hover:scale-105"
                   style={{
                     backgroundColor: `${service.color}15`,
                     color: service.color,
@@ -182,12 +107,12 @@ export default function ServicesGrid() {
                 </div>
 
                 {/* Title */}
-                <h3 className="text-base font-bold text-gray-900 mb-2 leading-tight group-hover:text-[#2563EB] transition-colors duration-300">
+                <h3 className="text-lg font-bold text-gray-900 mb-3 leading-tight group-hover:text-[#2563EB] transition-colors duration-300">
                   {service.title}
                 </h3>
 
                 {/* Description */}
-                <p className="text-gray-500 text-xs leading-relaxed font-medium">
+                <p className="text-gray-500 text-sm leading-relaxed font-medium">
                   {service.desc}
                 </p>
               </div>
