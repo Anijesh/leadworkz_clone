@@ -12,29 +12,29 @@ export default function Foundation() {
       <div className="glow-radial-cyan absolute top-1/2 left-[20%] -translate-y-1/2 w-[600px] h-[600px] blur-[150px] rounded-full z-0 opacity-20 pointer-events-none"></div>
 
       <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-16 items-center z-10 relative">
-        
+
         {/* Left Side: 3D Globe */}
         <div className="w-full h-[400px] md:h-[600px] relative rounded-[40px] overflow-hidden glass-nav flex items-center justify-center border border-white/10 shadow-2xl">
-            <Suspense fallback={<div className="text-white/30 text-sm font-bold tracking-widest uppercase animate-pulse">Loading Environment...</div>}>
-                <GlobeCanvas />
-            </Suspense>
+          <Suspense fallback={<div className="text-white/30 text-sm font-bold tracking-widest uppercase animate-pulse">Loading Environment...</div>}>
+            <GlobeCanvas />
+          </Suspense>
         </div>
 
         {/* Right Side: Content */}
-        <motion.div 
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.8 }}
-            className="flex flex-col justify-center"
+        <motion.div
+          initial={{ opacity: 0, x: 50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8 }}
+          className="flex flex-col justify-center"
         >
           <div className="mb-6">
             <span className="text-blue-vibrant font-black tracking-[0.2em] uppercase text-xs">01. The Foundation</span>
             <h2 className="text-5xl md:text-6xl lg:text-[5rem] font-black mt-4 tracking-tighter leading-[1] mb-6">
-              Global Reach.<br/> <span className="text-outline">Local Impact.</span>
+              Global Reach.<br /> <span className="text-outline">Local Impact.</span>
             </h2>
           </div>
-          
+
           <p className="text-white/60 text-lg leading-relaxed mb-10 max-w-xl font-medium">
             We build digital systems that transcend borders while dominating localized search intent. By scaling predictable acquisition channels, your growth is never capped by geography.
           </p>

@@ -18,13 +18,13 @@ export default function Process() {
           <div className="glow-radial-blue absolute top-0 left-1/2 -translate-x-1/2 w-64 h-64 blur-[80px] z-0 opacity-40"></div>
           <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
             <span className="text-blue-vibrant font-black tracking-[0.2em] uppercase text-xs z-10 relative">Methodology</span>
-            <h2 className="text-5xl md:text-7xl font-black mt-4 tracking-tighter leading-[1.1] z-10 relative">Our Results-Driven <br/> <span className="text-outline">Process</span></h2>
+            <h2 className="text-5xl md:text-7xl font-black mt-4 tracking-tighter leading-[1.1] z-10 relative">Our Results-Driven <br /> <span className="text-outline">Process</span></h2>
           </motion.div>
         </div>
 
         <div className="space-y-40">
           {steps.map((step, idx) => (
-            <motion.div 
+            <motion.div
               key={idx}
               initial={{ opacity: 0, y: 60 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -36,7 +36,7 @@ export default function Process() {
               <div className="absolute -left-10 md:-left-40 -top-20 text-[12rem] md:text-[20rem] font-black text-white/[0.03] select-none pointer-events-none z-0 leading-none">
                 {step.num}
               </div>
-              
+
               <div className="text-4xl md:text-5xl font-black text-blue-vibrant z-10 w-24 shrink-0 mt-8 md:mt-0">
                 {step.num}.
               </div>

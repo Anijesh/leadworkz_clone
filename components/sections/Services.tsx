@@ -50,7 +50,7 @@ const services = [
 
 export default function Services() {
   const containerRef = useRef<HTMLDivElement>(null);
-  
+
   // Stretch the scroll height dynamically for the 360-degree rotation
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -74,7 +74,7 @@ export default function Services() {
   return (
     <section ref={containerRef} className="bg-white text-black relative h-[300vh]">
       <div className="sticky top-0 h-screen w-full flex flex-col items-center overflow-hidden" style={{ perspective: '2000px' }}>
-        
+
         {/* Top Heading */}
         <div className="absolute top-[10vh] md:top-[12vh] w-full text-center flex flex-col items-center z-50">
           <h2 className="text-4xl md:text-6xl lg:text-[4.5rem] font-black tracking-tighter text-black-true leading-[1] drop-shadow-sm">
@@ -84,20 +84,20 @@ export default function Services() {
 
         {/* 3D Rotating Cylinder Axis */}
         <div className="absolute inset-0 flex items-center justify-center top-[10vh]">
-          <motion.div 
-            style={{ 
+          <motion.div
+            style={{
               rotateY,
               transformStyle: "preserve-3d",
               z: -radius // Push the whole cylinder backwards natively so front card aligns flush Z=0
-            }} 
+            }}
             className="relative w-[340px] md:w-[640px] h-[540px]"
           >
             {services.map((service, idx) => {
               const angle = (360 / services.length) * idx;
 
               return (
-                <div 
-                  key={idx} 
+                <div
+                  key={idx}
                   className="absolute inset-0 bg-[#2563EB] rounded-[32px] overflow-hidden shadow-[0_30px_60px_rgba(0,0,0,0.3)] flex flex-col border border-white/10"
                   style={{
                     transform: `rotateY(${angle}deg) translateZ(${radius}px)`,
@@ -106,7 +106,7 @@ export default function Services() {
                   }}
                 >
                   {/* Top Image Section */}
-                  <div 
+                  <div
                     className="h-[55%] w-full bg-cover bg-center"
                     style={{ backgroundImage: service.img, backgroundColor: '#0a0a0a' }}
                   >
@@ -115,7 +115,7 @@ export default function Services() {
                       {service.num}
                     </div>
                   </div>
-                  
+
                   {/* Bottom Content */}
                   <div className="h-[45%] w-full bg-[#2563EB] p-8 md:p-10 flex flex-col justify-between z-10 border-t border-white/20">
                     <div>
@@ -123,7 +123,7 @@ export default function Services() {
                       <h3 className="text-2xl md:text-3xl font-black text-white leading-tight tracking-tight mb-2">{service.title}</h3>
                       <p className="text-white/80 font-medium text-xs md:text-sm leading-relaxed max-w-sm">{service.desc}</p>
                     </div>
-                    
+
                     <button className="bg-white text-[#2563EB] hover:scale-105 transition-transform w-fit px-6 py-2.5 rounded-full font-bold text-xs flex items-center gap-2 shadow-lg tracking-widest uppercase">
                       Explore Service <span className="text-lg leading-none">&rarr;</span>
                     </button>

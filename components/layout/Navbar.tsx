@@ -15,12 +15,12 @@ export default function Navbar() {
 
   return (
     <header className={`fixed left-1/2 -translate-x-1/2 w-full max-w-[800px] z-50 transition-all duration-300 ${scrolled ? 'top-4' : 'top-8'}`}>
-      
+
       {/* Floating Left Logo */}
       <div className="absolute -left-20 md:-left-32 top-1 hidden md:flex items-center justify-center p-2 z-50 bg-white shadow-xl rounded-xl">
-          <div className="w-10 h-10 flex items-center justify-center bg-[#EAB308] font-black text-black text-sm transform -rotate-3 rounded-md">
-            LW
-          </div>
+        <div className="w-10 h-10 flex items-center justify-center bg-[#EAB308] font-black text-black text-sm transform -rotate-3 rounded-md">
+          LW
+        </div>
       </div>
 
       <div className="relative bg-[#1d1d1f]/90 backdrop-blur-xl rounded-full px-2 py-2 flex items-center justify-between shadow-[0_20px_40px_rgba(0,0,0,0.2)] border border-[#333]">
