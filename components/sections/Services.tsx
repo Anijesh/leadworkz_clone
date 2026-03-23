@@ -9,7 +9,7 @@ const services = [
     title: "Brand & Creative Strategy",
     subtitle: "BRANDING",
     desc: "Defining Clear Brand Direction & Creative Foundations That Drive Consistency",
-    img: "url('https://images.unsplash.com/photo-1627582236528-56f8ae9fe4c2?q=80&w=640&auto=format&fit=crop')"
+    img: "url('https://www.leadworkz.com/Images/brand%20&%20creative%20strategy.jpg')"
   },
   {
     num: "02",
@@ -37,7 +37,7 @@ const services = [
     title: "Search Engine Optimization (SEO)",
     subtitle: "SEARCH",
     desc: "Building sustainable visibility where intent begins.",
-    img: "url('https://images.unsplash.com/photo-1571721795152-16e6f119e0dd?q=80&w=640&auto=format&fit=crop')"
+    img: "url('https://www.leadworkz.com/Images/seo.png')"
   },
   {
     num: "06",
